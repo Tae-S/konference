@@ -1,0 +1,196 @@
+/* 
+    font-family: 'Caveat Brush', cursive;
+font-family: 'Nunito', sans-serif;
+font-family: 'Prompt', sans-serif;
+*/
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+header{
+    height: 647.19px;
+    width: 1300px;
+    /* border:1px solid red; */
+    margin-left:70px;
+    font-family: 'Prompt';
+}
+
+header > .logo{
+    /* border: 1px solid blue; */
+    width:1269px;
+    height:50px;
+    margin:auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+header > .header-static{
+    width:1300px;
+    height:456px;
+    border-radius: 50px;
+    background: #FFDBA6;
+    margin-top: 58px;
+    /* border:1px solid orange; */
+    position: absolute;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.header-static > p:nth-child(1){
+    position: absolute;
+    top:70px;
+    left:53px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    font-family: 'Caveat Brush';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 72px;
+    line-height: 130%;
+    color: #572148;
+}
+
+.header-static > p:nth-child(2){
+    position: absolute;
+    top:191px;
+    left:95.47px;
+    width:674.88px;
+    height:135px;
+    text-align: left;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    color: #572148;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.header-static > img{
+    left:903.96px;
+    top:41px;
+    position: absolute;
+}
+
+header > .header-form{
+    width:597px;
+    height:120px;
+    /* border:1px solid brown; */
+    position: absolute;
+    top: 527.19px;
+    left:404px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.header-form > div:nth-child(1){
+    /* border: 1px solid red; */
+    position: absolute;
+    /* position: relative; */
+    left:34px;
+    top:20px;
+    width:309px;
+    height:78px;
+}
+
+.header-form > div:nth-child(2){
+    /* border:1px solid red; */
+    position: absolute;
+    left:388px;
+    top:20px;
+    width:180px;
+    height:78px;
+}
+
+.header-form > div:nth-child(1) > label{
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    color: #000000;
+    margin-left:1px;
+}
+
+.header-form > div:nth-child(1) > .search{
+    width:309px;
+    height:45px;
+    border: 1px solid #CCCCCC;
+    box-sizing: border-box;
+    border-radius: 5px;
+    position: relative;
+}
+
+.search > input{
+    width:271px;
+    height:45px;
+    border:none;
+    outline:none;
+    /* border:1px solid blue; */
+    border-radius: 5px;
+    font-size:24px;
+}
+
+.search > img{
+    /* border:1px solid tomato; */
+    position: absolute;
+    left:271px;
+    top:9.81px;
+    cursor: pointer;
+}
+
+.header-form > div:nth-child(2) > label{
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    color: #000000;
+    margin-left:1px;
+}
+
+.header-form > div:nth-child(2) > select{
+    width:180px;
+    height:45px;
+    border: 1px solid #CCCCCC;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.header-form > div:nth-child(2) > select{
+    font-family: 'Prompt';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    color: #999999;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;       /* Remove default arrow */
+    /* background-image: url(...); */
+    background-image: url('../static/images/arrow-down.svg');
+    background-repeat: no-repeat;
+    background-position-x: 154px;
+    background-position-y: 17px;
+}
+
+option{
+    font-family: 'Prompt';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}

@@ -1,0 +1,194 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+.app{
+    /* border:1px solid red; */
+    /* height:1596.81px; */
+    height:fit-content;
+    width:1300px;
+    margin-left:70px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 30.55px;
+    column-gap: 73.96px;
+    margin-top:100.82px;
+}
+
+.card{
+    width:272.04px;
+    height:287.45px;
+    /* filter: drop-shadow(0px 0px 13.5679px rgba(0, 0, 0, 0.2)); */
+    box-shadow: 0px 0px 13.5679px rgba(0, 0, 0, 0.2);
+    border-radius: 13.5679px;
+    position: relative;
+}
+
+.card-img{
+    position: absolute;
+    width:271.36px;
+    height:170.96px;
+    border: 0.904527px solid #FFFFFF;
+    border-radius: 4.52264px; /* OLD: maybe*/
+    filter:none;
+}
+
+.card-info {
+    /* position: relative; */
+    position: absolute;
+    width:236.08px;
+    height:67.53px;
+    margin-top: 32.04px;
+    margin-left:14px;
+    /* top:203px; */
+    /* top:201.98px; */
+    bottom:18.13px;
+}
+
+.card-top{
+    /* position: absolute; */
+    position: relative;
+    width: 27.14px;
+    height: 27.14px;
+    left: 14px;
+    top: 9px;
+    border: 0.904527px solid #FFFFFF;
+    border-radius: 4.52264px;
+}
+
+.card-info > .title{
+    position: absolute;
+    font-family: 'Prompt';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16.2815px;
+    line-height: 130%;
+    color: #141B25;
+    /* border:1px solid blue; */
+    width: 236.08px;
+    height: 41.61px;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.btm-right > .free-sep,
+.card-podium,
+.card-info-circle,
+.btm-right > .free,
+.btm-right > .loc,
+.btm-right > .online{
+    /* position: absolute; */
+    filter:none;
+    opacity: 0.75;
+}
+
+.btm-left,
+.btm-right{
+    position: absolute;
+    top:51.29px;
+    /* border:1px solid green; */
+}
+
+.btm-right{
+    top:50.53px;
+    left:141.53px;
+    width:90px;
+    height:16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.btm-left{
+    margin-left:0.53px;
+    width:95.28px;
+    height:16.24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.btm-left  .loc{
+    /* left:34.8px;
+    top:51.53px; */
+    font-family: 'Prompt';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10.8543px;
+    line-height: 16px;
+    color: #141B25;
+}
+
+.btm-right > .free-sep,
+.btm-right > .free,
+.btm-right > .online{
+    font-family: 'Prompt';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10.8543px;
+    line-height: 16px;
+    color: #141B25;
+}
+
+
+.load-more-container{
+    width:1281px;
+    height:48px;
+    /* border:1px solid blue; */
+    /* top:2067px; */
+    margin-top: 78.55px;
+    margin-left:80px;
+    /* position: absolute; */
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:129px;
+}
+
+.load-more-container > .bar{
+    width:529px;
+    height:2px;
+    background: #CCCCCC;
+    border-radius: 2px;
+}
+
+.load-more-container > .btn{
+    width: 143px;
+    height: 48px;
+    left: 649px;
+    top: 2067px;
+    border: 1px solid #CCCCCC;
+    border-radius: 35px;
+    background:transparent;
+    display: flex;
+    justify-content: center;
+
+    font-family: 'Prompt';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: right;
+    color: #141B25;
+    cursor: pointer;
+}
+
+/* DEF: RWD */
+@media only screen and (max-width: 600px) {
+    
+}
+
+@media only screen and (min-width: 1366px) {
+    body{
+        /* width:fit-content; */
+        border:1px solid green;
+    }
+}
