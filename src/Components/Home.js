@@ -25,15 +25,17 @@ function Home()
     const [events, setEvents] = useState([])
     const API_URL = 'https://iitm1blt3l.execute-api.ap-southeast-1.amazonaws.com/dev/hosted-events?'
     useEffect(()=>{
-        console.log(window.innerWidth)
         const _API_URL = API_URL + `limit=${limit}`
         fetchData(_API_URL)
             .then(data => {
-                // const _data = data.slice(0+offset, Math.min(limit, data.length-1))
-                // console.log(_data)
                 console.log(data)
                 setEvents(data)
-                setOffset(prevState => prevState + Math.min(data.length, limit+1))
+                try{
+                    setOffset(prevState => prevState + Math.min(data.length, limit+1))
+                }catch(err){
+                    throw new Error(err, 'error occurred')
+                }
+                
             })
             .catch(err => console.log(err))
     }, [])
@@ -49,12 +51,14 @@ function Home()
     const handleClick = e =>{
         console.log(values)
         //fetching data
-        const _API_URL = API_URL + `limit=${limit}&offset=${offset}?search_query='${values.search}'`//&past_events=${values.pastEvents}`
+        const _API_URL = API_URL + `limit=${limit}&offset=${offset}?search_query='${values.search}'&past_events=${values.pastEvents}`
         console.log(_API_URL)
         fetchData(_API_URL)
             .then(data =>{
-                data.slice(0 + offset, Math.min(limit, data.length-1))
+                //OLD: currently shows only first 12 results of the query results
+                data = data.splice(0 + offset, Math.min(limit, data.length-1))
                 setOffset(prevState => prevState + Math.min(data.length, limit+1))
+                setEvents(data)
             })
             .catch(err => console.log(err))
     }
@@ -65,10 +69,15 @@ function Home()
         fetchData(_API_URL)
             .then(data => {
                 console.log(data)
+                if(data === undefined) console.log('Undefined')
                 setEvents(prevState => {
                     return [...prevState, ...data]
                 })
-                setOffset(prevState => prevState + Math.min(data.length, LOAD_MORE_LIMIT+1))
+                try{
+                    setOffset(prevState => prevState + Math.min(data.length, LOAD_MORE_LIMIT+1))
+                }catch(err){
+                    throw new Error(err, 'error occurred')
+                }
             })
             .catch(err => console.log(err))
     }
@@ -149,10 +158,21 @@ function Event({name, online, free})
 
 export async function fetchData(API_URL)
 {
-    const response = await fetch(API_URL)
-    const data = await response.json()
-    console.log(data.events)
-    return data.events
+    let returnThis = null
+    await fetch(API_URL)
+        .then(response=>{
+            if (response.status >= 400 && response.status < 600) {
+                throw new Error("Bad response from server")
+            }
+            return response
+        })
+        .then(data => returnThis = data)
+    if(returnThis) return returnThis.events
+    else return []
+    // const data = await response.json()
+    // if(typeof(data) === 'undefined') return []
+    // console.log(data.events)
+    // return data.events
 }
 
 
