@@ -159,20 +159,25 @@ function Event({name, online, free})
 export async function fetchData(API_URL)
 {
     let returnThis = null
-    await fetch(API_URL)
-        .then(response=>{
-            if (response.status >= 400 && response.status < 600) {
-                throw new Error("Bad response from server")
-            }
-            return response
-        })
-        .then(data => returnThis = data)
-    if(returnThis) return returnThis.events
-    else return []
-    // const data = await response.json()
-    // if(typeof(data) === 'undefined') return []
-    // console.log(data.events)
-    // return data.events
+    const response = await fetch(API_URL, {mode: 'cors'})
+    //     .then(response=>{
+    //         if (response.status >= 400 && response.status < 600) {
+    //             throw new Error("Bad response from server")
+    //         }
+    //         console.log(response)
+    //         return response
+    //     })
+    //     .then(data => returnThis = data)
+    // if(returnThis) return await returnThis.events
+    // else return []
+    // console.log(response.status)
+    if (response.status >= 400 && response.status < 600) {
+        throw new Error("Bad response from server")
+    }
+    const data = await response.json()
+    if(typeof(data) === 'undefined') return []
+    console.log(data.events)
+    return data.events
 }
 
 
